@@ -11,17 +11,19 @@ private:
 	int pos;
 	int max;
 public:
-	Set(int);
+	//Set(int);
+	Set(void);
 	~Set();
 	void add(int);
+	void print(void);
 };
 
 template <class T>
-Set<T>::Set(int max)
+Set<T>::Set()
 {
 	nums = new int[max];
 	pos = 0;
-	this->max = max;
+	max = 10;
 }
 
 template<class T>
@@ -40,6 +42,23 @@ void Set<T>::add(int elem)
 		if (nums[i] = elem)	return;
 	}
 	nums[pos++] = elem;
+}
+
+template<class T>
+void Set<T>::print(void)
+{
+	//cout << "print called" << endl;
+	cout << max << endl;
+	for (int i = 0; i < max; i++)
+	{
+		//cout << "inside loop" << endl;
+		cout << nums[i] << endl;
+		cout << i << endl;
+		cout << "printing" << endl;
+	}
+	cout << "end" << endl;
+	int end;
+	cin >> end;
 }
 
 
